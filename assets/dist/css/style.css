@@ -1,0 +1,235 @@
+
+/*
+ * Base structure
+ */
+
+
+body {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background-image: url(../../brand/backgroud-fundo.webp);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/*
+ * Header
+ */
+.nav-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(to bottom, #111 , transparent);
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 15px;
+}
+.nav-masthead .nav-link {
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.logo-loja{
+  width: 125px;
+  height: 80px;
+}
+
+.logo-perfil{
+  width: 250px;
+  height: 250px;
+  border-radius: 20%;
+  transition:1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.perfil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 25%;
+  padding-bottom: 150px;
+}
+
+.texto{
+  font-size: 20px;
+  font-weight: 400;
+  padding: 30px;
+  width: 650px;
+}
+.lead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.contact{
+  color: #111;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: rgb(143, 244, 42);
+  border-radius: 20px;
+ 
+}
+
+
+/* Produtos */
+
+.div-produto{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 150px;
+}
+.div-produto h2{
+  padding: 30px;
+  color: crimson;
+  font-size: 40px;
+  font-weight: 900;
+}
+.card-produtos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card{
+  margin: 15px;
+  
+}
+
+/* contato */
+.div-contact h2{
+  padding: 30px;
+  color: crimson;
+  font-size: 40px;
+  font-weight: 900;
+}
+.contact-content {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 150px;
+}
+
+.text {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.icons{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-content .roww{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 8px ;
+}
+
+.contact-content .roww .info .head {
+ 
+  color: black;
+  font-weight: 500;
+}
+
+.roww .info .sub-title {
+  color: black;
+}
+
+.roww a ion-icon {
+  font-weight: 600;
+  color: black;
+  font-size: 25px;
+}
+
+main{
+  background: linear-gradient(to top, crimson ,5%, transparent);
+}
+/* footer */
+
+footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color:crimson; 
+  width: 100%;
+  padding: 15px;
+  text-decoration: none;
+}
+footer p{
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  
+}
+
+
+@media (max-width: 1430px) {
+  body {
+    background-image: none;
+    background-color: crimson;
+  }
+  .perfil{
+    padding: 0;
+  }
+  .texto{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+  }
+}
+
+
+@media (max-width: 500px) {
+  body {
+    background-image: none;
+    background-color: crimson;
+  }
+  .perfil{
+
+    padding: 0;
+  }
+  .texto{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+  }
+}
