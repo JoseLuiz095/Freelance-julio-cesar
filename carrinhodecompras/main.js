@@ -170,12 +170,12 @@ function enviarOrcamento() {
   const total = document.querySelector('.carrinho__total strong').textContent.replace('R$', '');
   const produtosSelecionados = Object.values(carrinhoItens).map(produto => `${produto.quantidade}x ${produto.nome}`).join('%0A');
   const numeroVendedor = vendedor.find(vendedor => vendedor.nome === nomeVendedor).numero;
-  const linkWhatsapp = `https://wa.me/55${numeroVendedor}?text=Olá ${saudacao()} ${nomeVendedor}, poderia me fazer um Orcmento desses produtos:${produtosSelecionados}`;
+  const linkWhatsapp = `https://wa.me/55${numeroVendedor}?text=Olá ${saudacao()} ${nomeVendedor}, poderia me fazer um Orçamento desses produtos:${produtosSelecionados}.`;
   if (total == '0'){
-    alert("Adicione pelo menos 1 intem a sua lista");
+    alert("Adicione pelo menos 1 item a sua lista.");
     return
   }else if (nomeVendedor =="Selecione"){
-    alert("Selecione o Vendedor que deseja enviar o orçamento.");
+    alert("Selecione o Vendedor que deseja enviar o Orçamento.");
     return
   }
 

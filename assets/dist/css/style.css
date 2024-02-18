@@ -1,5 +1,28 @@
 
 /*
+ * Scroll da tela
+ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #b0b0b0;
+  height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: crimson;
+  border-radius: 5px;
+  border: solid 1px #b0b0b0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c52f4b9e;
+}
+
+
+
+
+/*
  * Base structure
  */
 
@@ -7,13 +30,15 @@
 body {
   max-width: 100vw !important;
   height: 100vh !important;
-  background-image: url(../../../brand/backgroud-fundo.webp);
+  background-image: url(../../../brand/backgroud-fundo.jpg);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+.orcamento-button{
+  display: none;
+}
 
 /*
  * Header
@@ -38,6 +63,7 @@ body {
   color: rgb(255, 255, 255);
   border-bottom: .25rem solid transparent;
 }
+
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
@@ -86,13 +112,12 @@ body {
 }
 
 .contact{
-  color: #111;
+  color: #ffffff;
   font-weight: 900;
   text-decoration: none;
   padding: 10px 30px;
-  background-color: rgb(143, 244, 42);
+  background: linear-gradient(to right, #38b825 ,#4bd543);
   border-radius: 20px;
- 
 }
 
 
@@ -116,6 +141,8 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 .card{
   margin: 15px;
@@ -180,6 +207,7 @@ body {
 }
 
 main{
+  min-width: 100%;
   background: linear-gradient(to top, crimson , transparent);
 }
 /* footer */
@@ -195,7 +223,7 @@ footer{
   color: #111;
 }
 footer a{
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   text-decoration: none;
   color: #111;
@@ -282,7 +310,24 @@ footer a{
     background-image: none;
     background-color:white;
   }
-  .nav-masthead{display: none;}
+  .orcamento-button {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
+    background-color:crimson;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-masthead{
+    display: none;
+  }
   .perfil{
     padding: 0;
   }
