@@ -1,27 +1,45 @@
-body{
+body {
     max-width: 100vw !important;
     min-height: 100vh !important;
-    background: linear-gradient(to top, crimson , transparent);
-  
+    background: linear-gradient(to top, crimson, transparent);
+
 }
 
+.cabecalho {
+    display: flex;
+    justify-content: center;
+}
+
+.barra {
+    width: 40vw;
+}
+
+.barradepesquisa {
+    display: flex;
+    justify-content: center;
+}
 
 /* footer */
 
-footer{
+footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-self: flex-end;
     justify-content: center;
-    background: crimson;
+    background-color: crimson;
     width: 100%;
-    padding: 15px;
-    color: #fff8f8;
+    padding: 15px 0;
+    color: black;
 }
-footer a{
-    font-size: 14px;
+
+footer p {
+    padding: 0 20%;
+}
+
+footer a {
+    font-size: 12px;
     font-weight: 800;
+    color: white;
     text-decoration: none;
-    color: #f8f8f8;
 }
+

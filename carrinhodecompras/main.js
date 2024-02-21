@@ -37,7 +37,7 @@ const produtos = [
   },
   {
     id: 'p6',
-    nome: 'Prefil',
+    nome: 'Perfil',
     preco: 500,
     descricao: '',
     imagem: "../brand/produtos-carrinho-06.png"
@@ -69,6 +69,32 @@ const vendedor = [
   },
 ];
 
+// Função para renderizar os produtos filtrados
+function renderizaProdutosFiltrados(textoPesquisa) {
+  // Converter o texto da pesquisa para minúsculas para corresponder sem distinção entre maiúsculas e minúsculas
+  const textoPesquisaMin = textoPesquisa.toLowerCase();
+  
+  // Filtrar os produtos com base no texto da pesquisa
+  const produtosFiltrados = produtos.filter(produto =>
+    produto.nome.toLowerCase().includes(textoPesquisaMin)
+  );
+  
+  // Renderizar os produtos filtrados
+  let html = '';
+  for (let i = 0; i < produtosFiltrados.length; i++) {
+    html = html + renderizaProduto(produtosFiltrados[i], i);
+  }
+  
+  // Atualizar a lista de produtos na página
+  document.querySelector('.loja').innerHTML = html;
+}
+
+// Adicionar um ouvinte de eventos de entrada (input listener) ao campo de pesquisa
+const campoPesquisa = document.getElementById('campo-pesquisa');
+campoPesquisa.addEventListener('input', function(event) {
+  const textoPesquisa = event.target.value;
+  renderizaProdutosFiltrados(textoPesquisa);
+});
 
 
 function saudacao() {
@@ -95,7 +121,7 @@ function renderizaProduto(produto, index) {
         <div class="card loja__item">
           <img class="card-img-top" src="${produto.imagem}" alt="">
             <div class="card-body">
-              <h5 class="card-title">${produto.nome}</h5>
+              <h5 class="card-title" >${produto.nome}</h5>
               <small>R$${produto.preco}</small>
               <p class="card-text">${produto.descricao}</p>
               <div class="input-group mb-3">
@@ -121,6 +147,7 @@ function renderizaProdutos() {
 
 function renderizaItemCarrinho(produtoCarrinho) {
   return `
+  
     <div class="card carrinho__item">
       <div class="card-body">
         <h5 class="card-title">${produtoCarrinho.nome}</h5>
@@ -159,7 +186,7 @@ function renderCarrinhoTotal() {
     <select id="nomeVendedor">
       ${vendedoresOptions.join('')}
     </select>
-    <button id="enviarOrcamento" style="margin-top: 10px; padding: 5px 10px; border-radius: 5px; background-color: #28a745; color: #fff; border: none;">Enviar Orçamento</button>
+    <button id="enviarOrcamento" class="btn btn-success" >Enviar Orçamento</button>
   </div>`;
 
   document.getElementById('enviarOrcamento').addEventListener('click', enviarOrcamento);

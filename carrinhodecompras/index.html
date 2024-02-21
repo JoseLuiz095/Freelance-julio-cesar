@@ -8,19 +8,32 @@
   <title>Carrinho de Produtos</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../brand/logo-image-x-icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="../brand/logo-image-x-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="cabecalho">
+    <img src="../brand/Casa-do-Serralheiro-Header-Logo.webp" class=" mb-0">
+  </div>
   <div class="container">
-    <img src="../brand/Casa-do-Serralheiro-Header-Logo.webp" style="padding-left: 25%;" class="float-md-start mb-0  logo-loja">
     <hr>
     <div id="app" class="row">
       <div class="col-sm-8">
+        <div class="barradepesquisa">
+          <nav class="navbar bg-body-tertiary ">
+            <div class="container-fluid">
+              <form class="d-flex " role="search">
+                <input id="campo-pesquisa" class="form-control me-2 barra " type="search" placeholder="Pesquisar Produto"
+                  aria-label="Pesquisar">
+                <button class="btn btn-outline-success ml-2" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>
+        </div>
         <div class="row loja">
           <!-- <div class="col-sm-4 mb-3">
-          <div class="card">
+            <div class="card">
               <div class="card loja__item">
                 <img class="card-img-top" src="https://lorempixel.com/500/300" alt="">
                 <div class="card-body">
@@ -54,7 +67,8 @@
     </div>
   </div>
   <footer>
-    <p>Desenvolvido por <a href="https://portifolio-jl095.netlify.app">DevJL095</a></p>
+    <p> &copy; Copyright 2024 - Casa do Serralheiro - Todos os direitos reservados - Feito por <a
+        href="https://portifolio-jl095.netlify.app">DevJL095</a></p>
   </footer>
   <script src="main.js"></script>
 </body>
