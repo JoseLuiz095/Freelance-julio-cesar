@@ -84,6 +84,10 @@ function renderizaProdutosFiltrados(textoPesquisa) {
   for (let i = 0; i < produtosFiltrados.length; i++) {
     html = html + renderizaProduto(produtosFiltrados[i], i);
   }
+  if (html==0){
+    const nadapesquisado = document.querySelector('.nadaencontrado');
+    nadapesquisado.classList.remove('none');
+  }
   
   // Atualizar a lista de produtos na página
   document.querySelector('.loja').innerHTML = html;
@@ -210,19 +214,19 @@ function enviarOrcamento() {
 }
 
 
-
-function adicionaItemNoCarrinho(produto, quantidade) {
+function adicionaItemNoCarrinho(produto) {
   const nomeVendedor = document.getElementById('nomeVendedor').value;
 
-  if (!carrinhoItens[produto.id]) {
-    carrinhoItens[produto.id] = { ...produto, quantidade, vendedor: nomeVendedor };
+  if (!carrinhoItens[produto.nome]) {
+    carrinhoItens[produto.nome] = { ...produto, vendedor: nomeVendedor };
   } else {
-    carrinhoItens[produto.id].quantidade += quantidade; // Atualizando a quantidade
+    carrinhoItens[produto.nome].quantidade += produto.quantidade; // Atualizando a quantidade
   }
 
   renderizaCarrinho();
   renderCarrinhoTotal();
 }
+
 
 
 // Chamar a função para renderizar o carrinho de compras
@@ -231,20 +235,23 @@ renderizaCarrinho();
 renderCarrinhoTotal();
 
 
-document.body
-.addEventListener('click', function(event) {
+document.body.addEventListener('click', function(event) {
   const elemento = event.target;
   
   if (elemento.classList.contains('btn-add')) {
-    const index = parseInt(elemento.getAttribute('data-index'), 10);
-    const produto = produtos[index];
-    
-    // Capturando o valor do input de quantidade
-    const quantidadeInput = elemento.parentElement.previousElementSibling;
-    const quantidade = parseInt(quantidadeInput.value);
-    
-    adicionaItemNoCarrinho(produto, quantidade); // Passando a quantidade para a função
-}
+    const card = elemento.closest('.card'); // Encontra o card pai
+    const nome = card.querySelector('.card-title').textContent.trim(); // Recupera o nome do produto
+    const preco = parseFloat(card.querySelector('small').textContent.replace('R$', '')); // Recupera o preço do produto
+    const quantidade = parseInt(card.querySelector('.produto-quantidade').value); // Recupera a quantidade do produto
+
+    const produto = {
+      nome: nome,
+      preco: preco,
+      quantidade: quantidade
+    };
+
+    adicionaItemNoCarrinho(produto); // Passando o objeto do produto
+  }
 
   
   if (elemento.classList.contains('btn-remove')) {
