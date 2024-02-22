@@ -84,13 +84,18 @@ function renderizaProdutosFiltrados(textoPesquisa) {
   for (let i = 0; i < produtosFiltrados.length; i++) {
     html = html + renderizaProduto(produtosFiltrados[i], i);
   }
-  if (html==0){
-    const nadapesquisado = document.querySelector('.nadaencontrado');
-    nadapesquisado.classList.remove('none');
-  }
   
   // Atualizar a lista de produtos na página
   document.querySelector('.loja').innerHTML = html;
+  if (html<=0){
+    const nadapesquisado = document.querySelector('.nadaencontrado');
+    nadapesquisado.classList.remove('none');
+    return
+  }else{
+    const nadapesquisado = document.querySelector('.nadaencontrado');
+    nadapesquisado.classList.add('none');
+    return
+  }
 }
 
 // Adicionar um ouvinte de eventos de entrada (input listener) ao campo de pesquisa
